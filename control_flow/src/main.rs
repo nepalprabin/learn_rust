@@ -42,4 +42,9 @@ fn main() {
         count += 1;
         }
     println!("End Count = {count}");
+
+    // for loop
+    for age in (1..10).rev() {
+        println!("Age: {age}");
+    }
 }
