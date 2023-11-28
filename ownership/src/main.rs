@@ -1,11 +1,22 @@
 fn main() {
-    let s1 = String::from("hello");
-    let s2 = s1;
-    println!("{} world", s2);
+    // Ownership and Functions
+    let s = String::from("hello");  // s comes into scope
+    takes_ownership(s);             // value of s is moved to the function.. and s is not longer valid
 
-    // Variables and Data Interacting with Clone
-    let s3 = String::from("hello");
-    let s4 = s3.clone();
-    println!("s1={}, s2={}", s3, s4);
 
+    let x = 5;                      // x comes into scope
+    makes_copy(x);                  // x moved to the function
+                                    // but x is a Copy, so x is still valid
+    println!("After function: {}", x);
+
+
+
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{}", some_string);
+}
+
+fn makes_copy(some_integer: i32) {
+    println!("{}", some_integer);
 }
